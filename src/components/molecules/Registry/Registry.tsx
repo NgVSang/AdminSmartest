@@ -28,16 +28,16 @@ const Registry: FC<RegistryProps> = ({data, style, onPress}) => {
         </Text>
         <Text style={styles.content_style}>Loại: {data.name}</Text>
         <View style={{flexDirection: 'row', alignItems: 'center', gap: 10}}>
-          {data.isPay ? (
-            <View style={[styles.content_box, {backgroundColor: '#FFE9B1'}]}>
-              <Text style={[styles.content_box_style, {color: '#714B14'}]}>
-                Chờ đóng phí
-              </Text>
-            </View>
-          ) : (
+          {data.isPay && data.isPay === 1 ? (
             <View style={[styles.content_box, {backgroundColor: '#DDF5D6'}]}>
               <Text style={[styles.content_box_style, {color: '#2AA405'}]}>
                 Đã đóng phí
+              </Text>
+            </View>
+          ) : (
+            <View style={[styles.content_box, {backgroundColor: '#FFE9B1'}]}>
+              <Text style={[styles.content_box_style, {color: '#714B14'}]}>
+                Chờ đóng phí
               </Text>
             </View>
           )}

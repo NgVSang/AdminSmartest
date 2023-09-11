@@ -17,6 +17,20 @@ const getRegistriesByDate = (date: string) => {
   });
 };
 
+const getListDate = () => {
+  return instance.get(ENDPOINTS.LISTREGISTERSDATE);
+};
+
+const getRegistryDetail = (regisId: number) => {
+  return instance.get(ENDPOINTS.REGISTERDETAIL, {
+    params: {
+      id: regisId,
+    },
+  });
+};
+
 export const RegistryApi = {
   getRegistriesByDate,
+  getListDate,
+  getRegistryDetail,
 };

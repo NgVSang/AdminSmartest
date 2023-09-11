@@ -37,7 +37,6 @@ const NotificationScreen: FC<NotificationScreenProps> = ({}) => {
     try {
       setIsLoading(true);
       const res = await NotificationApi.getListNotification();
-      // console.log(res.data);
       setData(res.data.rows);
       setTotal(res.data.recordsTotal);
       setPage(2);

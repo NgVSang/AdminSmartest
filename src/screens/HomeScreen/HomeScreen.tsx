@@ -30,7 +30,7 @@ const HomeAdminScreen: FC<HomeAdminScreenProps> = ({navigation}) => {
         name: 'Lịch theo dõi đăng kiểm',
         icon: require('../../assets/icons/registry_history_icon.png'),
         onPress: () => {
-          // navigation.push('RegistriesList');
+          navigation.push('MonitoringSchedule');
         },
       },
       {
@@ -42,26 +42,26 @@ const HomeAdminScreen: FC<HomeAdminScreenProps> = ({navigation}) => {
       },
       {
         name: 'DS Đăng kiểm đã thu tiền',
-        icon: require('../../assets/icons/registry_history_icon.png'),
+        icon: require('../../assets/icons/registries_payment_icon.png'),
         onPress: () => {
           // navigation.push('HistoryRegistry');
         },
       },
       {
         name: 'DS hoàn thành đăng kiểm',
-        icon: require('../../assets/icons/point_info_icon.png'),
+        icon: require('../../assets/icons/registries_complete_icon.png'),
         onPress: () => {},
       },
       {
         name: 'Xem bảng chấm công',
-        icon: require('../../assets/icons/search_violate_icon.png'),
+        icon: require('../../assets/icons/timesheet_icon.png'),
         onPress: () => {
           // navigation.push('Infringe');
         },
       },
       {
         name: 'Xem bảng lương',
-        icon: require('../../assets/icons/search_violate_icon.png'),
+        icon: require('../../assets/icons/salary_icon.png'),
         onPress: () => {
           // navigation.push('Infringe');
         },

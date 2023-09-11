@@ -5,6 +5,10 @@ export type RootStackParamList = {
   Bottom: NavigatorScreenParams<BottomNavigate> | undefined;
   Profile: undefined;
   UpdateProfile: undefined;
+  MonitoringSchedule: undefined;
+  MonitorRegistrationDetail: {
+    id: number;
+  };
 };
 
 export type BottomNavigate = {

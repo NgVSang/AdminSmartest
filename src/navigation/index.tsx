@@ -10,7 +10,12 @@ import {useSelector} from 'react-redux';
 import {authSelector} from '../redux';
 import {colors} from '../constants';
 import {setHeaderConfigAxios, NavigationService} from '../services';
-import {AuthScreen, ProfileScreen} from '../screens';
+import {
+  AuthScreen,
+  MonitorRegistrationDetailScreen,
+  MonitoringScheduleScreen,
+  ProfileScreen,
+} from '../screens';
 import BottomNavigation from './BottomNavigation';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -74,6 +79,14 @@ const RootNavigator: FC = () => {
         <Stack.Screen name="Auth" component={AuthScreen} />
         <Stack.Screen name="Bottom" component={BottomNavigation} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen
+          name="MonitoringSchedule"
+          component={MonitoringScheduleScreen}
+        />
+        <Stack.Screen
+          name="MonitorRegistrationDetail"
+          component={MonitorRegistrationDetailScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

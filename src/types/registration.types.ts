@@ -8,7 +8,7 @@ export interface IRegistration {
   cost?: string;
   date?: string;
   completed_at?: string;
-  isPay: number;
+  isPay?: number;
 }
 
 export interface IFee {
@@ -35,16 +35,21 @@ export interface IHistoryRegistry {
 
 export interface IRegistrationDetail {
   id: number;
-  license_plate?: string;
-  license_plates?: string;
-  carId: number;
-  date: string;
-  registry_time?: string;
+  owner_name: string;
+  owner_phone: string;
   address?: string;
-  completedAt?: string;
-  isPay: number;
-  paymentAt?: string;
-  planDate?: string;
-  fee: IFee;
-  staff?: any;
+  date?: string;
+  registry_time?: string;
+  staff_id?: number;
+  staff_name?: string;
+  car_delivery_time?: string;
+  date_birth?: string;
+  id_card?: string;
+  phone_number?: string;
+  category_name: string;
+  car_type: string;
+  manufacture_at: number;
+  carImages: string[];
+  userImage: string;
+  license_plate: string;
 }
