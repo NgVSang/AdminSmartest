@@ -9,6 +9,9 @@ export type RootStackParamList = {
   MonitorRegistrationDetail: {
     id: number;
   };
+  RegisteredRegistration: undefined;
+  PaidRegistration: undefined;
+  CompletedRegistration: undefined;
 };
 
 export type BottomNavigate = {

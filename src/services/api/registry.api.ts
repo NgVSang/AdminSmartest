@@ -29,8 +29,18 @@ const getRegistryDetail = (regisId: number) => {
   });
 };
 
+const getRegistriesByType = (type: number, date: string) => {
+  return instance.get(ENDPOINTS.REGISTRYLISTTYPE, {
+    params: {
+      date: date,
+      type: type,
+    },
+  });
+};
+
 export const RegistryApi = {
   getRegistriesByDate,
   getListDate,
   getRegistryDetail,
+  getRegistriesByType,
 };

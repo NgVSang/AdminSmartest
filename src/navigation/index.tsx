@@ -12,9 +12,12 @@ import {colors} from '../constants';
 import {setHeaderConfigAxios, NavigationService} from '../services';
 import {
   AuthScreen,
+  CompletedRegistrationScreen,
   MonitorRegistrationDetailScreen,
   MonitoringScheduleScreen,
+  PaidRegistrationScreen,
   ProfileScreen,
+  RegisteredRegistrationScreen,
 } from '../screens';
 import BottomNavigation from './BottomNavigation';
 
@@ -86,6 +89,18 @@ const RootNavigator: FC = () => {
         <Stack.Screen
           name="MonitorRegistrationDetail"
           component={MonitorRegistrationDetailScreen}
+        />
+        <Stack.Screen
+          name="RegisteredRegistration"
+          component={RegisteredRegistrationScreen}
+        />
+        <Stack.Screen
+          name="PaidRegistration"
+          component={PaidRegistrationScreen}
+        />
+        <Stack.Screen
+          name="CompletedRegistration"
+          component={CompletedRegistrationScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -44,6 +44,7 @@ export interface IRegistrationDetail {
   staff_name?: string;
   car_delivery_time?: string;
   date_birth?: string;
+  status?: number;
   id_card?: string;
   phone_number?: string;
   category_name: string;

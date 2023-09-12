@@ -6,3 +6,5 @@ export * from './Header';
 export * from './Notification';
 export * from './Registry';
 export * from './MonitoringSchedule';
+export * from './RegistryInfo';
+export * from './SearchBar';

@@ -4,3 +4,6 @@ export * from './NotificationScreen';
 export * from './ProfileScreen';
 export * from './MonitoringScheduleScreen';
 export * from './MonitorRegistrationDetailScreen';
+export * from './RegisteredRegistrationScreen';
+export * from './PaidRegistrationScreen';
+export * from './CompletedRegistrationScreen';
