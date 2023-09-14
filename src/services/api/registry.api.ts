@@ -38,9 +38,19 @@ const getRegistriesByType = (type: number, date: string) => {
   });
 };
 
+const handlePayment = (data: any) => {
+  return instance.put(ENDPOINTS.CONFIRMPAYSUCCESS, data);
+};
+
+const handleComplete = (data: any) => {
+  return instance.put(ENDPOINTS.COMPLETEREGISTRY, data);
+};
+
 export const RegistryApi = {
   getRegistriesByDate,
   getListDate,
   getRegistryDetail,
   getRegistriesByType,
+  handlePayment,
+  handleComplete,
 };

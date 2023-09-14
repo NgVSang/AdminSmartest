@@ -24,18 +24,21 @@ const modalSlice = createSlice({
         content?: React.ReactNode;
         actions?: React.ReactNode[];
         onClose?: () => void;
+        handleConfirm?: () => void;
       }>,
     ) => {
       state.isOpen = true;
       state.content = action.payload.content;
       state.actions = action.payload.actions;
       state.onClose = action.payload.onClose;
+      state.handleConfirm = action.payload.handleConfirm;
     },
     closeModal: (state, action: PayloadAction) => {
       state.isOpen = false;
       state.content = undefined;
       state.actions = [];
       state.onClose = undefined;
+      state.handleConfirm = undefined;
     },
   },
 });

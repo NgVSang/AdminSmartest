@@ -44,14 +44,14 @@ const HomeAdminScreen: FC<HomeAdminScreenProps> = ({navigation}) => {
         name: 'DS Đăng kiểm đã thu tiền',
         icon: require('../../assets/icons/registries_payment_icon.png'),
         onPress: () => {
-          navigation.push('PaidRegistration');
+          navigation.push('PaidRegistration', {});
         },
       },
       {
         name: 'DS hoàn thành đăng kiểm',
         icon: require('../../assets/icons/registries_complete_icon.png'),
         onPress: () => {
-          navigation.push('CompletedRegistration');
+          navigation.push('CompletedRegistration', {});
         },
       },
       {

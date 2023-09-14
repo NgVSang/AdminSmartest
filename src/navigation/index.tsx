@@ -6,8 +6,8 @@ import {
   NavigationContainer,
   NavigationContainerRef,
 } from '@react-navigation/native';
-import {useSelector} from 'react-redux';
-import {authSelector} from '../redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {authSelector, closeModal} from '../redux';
 import {colors} from '../constants';
 import {setHeaderConfigAxios, NavigationService} from '../services';
 import {
@@ -24,6 +24,7 @@ import BottomNavigation from './BottomNavigation';
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const RootNavigator: FC = () => {
+  const dispatch = useDispatch();
   const {loggedin, info, access_token} = useSelector(authSelector);
 
   const [isLoading, setIsLoading] = useState(true);
@@ -33,6 +34,7 @@ const RootNavigator: FC = () => {
   NavigationService.initialize(navigationRef);
 
   useEffect(() => {
+    dispatch(closeModal());
     if (loggedin && access_token) {
       setHeaderConfigAxios(access_token);
     }

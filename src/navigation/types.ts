@@ -10,8 +10,12 @@ export type RootStackParamList = {
     id: number;
   };
   RegisteredRegistration: undefined;
-  PaidRegistration: undefined;
-  CompletedRegistration: undefined;
+  PaidRegistration: {
+    date?: Date;
+  };
+  CompletedRegistration: {
+    date?: Date;
+  };
 };
 
 export type BottomNavigate = {

@@ -16,11 +16,12 @@ import {Header, RegistryInfo, SearchBar} from '../../components';
 import {styles} from './CompletedRegistrationScreen.styled';
 import DateTimePickerModal from 'react-native-modal-datetime-picker';
 
-const CompletedRegistrationScreen: FC<
-  CompletedRegistrationScreenProps
-> = ({}) => {
+const CompletedRegistrationScreen: FC<CompletedRegistrationScreenProps> = ({
+  navigation,
+  route,
+}) => {
   const [visible, setVisible] = useState(false);
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(route.params.date || new Date());
   const [data, setData] = useState<IRegistrationDetail[]>([]);
   const [filteredDataSource, setFilteredDataSource] = useState<
     IRegistrationDetail[]

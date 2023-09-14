@@ -45,6 +45,16 @@ export const convertPrice = (price?: number) => {
   return '0';
 };
 
+export const convertNonPrice = (price?: string) => {
+  if (price) {
+    let arr = [];
+    const priceSTR = price.toString();
+    arr = priceSTR.split('.');
+    return arr.join('');
+  }
+  return '0';
+};
+
 export const formatDate = (date?: string) => {
   return date ? date.split('-').reverse().join('/') : '';
 };

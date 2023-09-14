@@ -18,23 +18,49 @@ const NotificationProvider: FC<PropsWithChildren> = ({children}) => {
 
       // Lấy mã thiết bị
       const fcmToken = await messaging().getToken();
+      console.log(fcmToken);
+
       dispatch(setFcmToken(fcmToken));
-      // Alert.alert('Mã của bạn:', fcmToken, [
-      //   {
-      //     text: 'Cancel',
-      //   },
-      //   {
-      //     text: 'Copy',
-      //     onPress: () => {
-      //       Clipboard.setString(fcmToken);
-      //     },
-      //   },
-      // ]);
     } catch (error: any) {
       Alert.alert('Lỗi', error);
       console.error('Error subscribing to FCM:', error);
     }
   };
+
+  useEffect(() => {
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+      console.log(
+        'A new FCM message arrived!',
+        JSON.stringify(remoteMessage.data),
+      );
+    });
+
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+      console.log(JSON.parse(remoteMessage.data?.data || ''));
+    });
+
+    messaging().onNotificationOpenedApp(remoteMessage => {
+      console.log(remoteMessage);
+      if (remoteMessage) {
+        const data = JSON.parse(remoteMessage.data?.data || '');
+        if (data && data.detail.notiId) {
+        }
+      }
+    });
+
+    messaging()
+      .getInitialNotification()
+      .then(remoteMessage => {
+        console.log(remoteMessage);
+
+        if (remoteMessage) {
+          const data = JSON.parse(remoteMessage.data?.data || '');
+          if (data && data.detail.notiId) {
+          }
+        }
+      });
+    return unsubscribe;
+  }, []);
 
   useEffect(() => {
     handleSubscribe();

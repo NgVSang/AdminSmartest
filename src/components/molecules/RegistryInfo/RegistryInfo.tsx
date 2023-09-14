@@ -7,16 +7,16 @@ import {converLicensePlate, formatDate} from '../../../utils/string';
 const RegistryInfo: FC<RegistryInfoProps> = ({
   data,
   type,
-  conCancel,
+  onCancle,
   onConfirm,
 }) => {
   const handleConfirm = useCallback(() => {
-    if (onConfirm) onConfirm();
-  }, [onConfirm]);
+    if (onConfirm) onConfirm(data);
+  }, [onConfirm, data]);
 
   const handleCancel = useCallback(() => {
-    if (conCancel) conCancel();
-  }, [conCancel]);
+    if (onCancle) onCancle(data);
+  }, [onCancle, data]);
 
   const renderButton = useMemo(() => {
     switch (type) {

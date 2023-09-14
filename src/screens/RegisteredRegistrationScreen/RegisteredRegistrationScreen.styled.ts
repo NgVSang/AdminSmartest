@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {fonts} from '../../constants';
+import {SCREEN_HEIGHT, SCREEN_WIDTH, colors, fonts} from '../../constants';
 
 export const styles = StyleSheet.create({
   calender: {
@@ -9,6 +9,14 @@ export const styles = StyleSheet.create({
     paddingVertical: 15,
     borderBottomColor: '#E1E9F6',
     borderBottomWidth: 1,
+  },
+  loading: {
+    width: SCREEN_WIDTH,
+    zIndex: 2,
+    height: SCREEN_HEIGHT,
+    justifyContent: 'center',
+    position: 'absolute',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   calender_title: {
     fontFamily: fonts.BE_VIETNAM_PRO_REGULAR,
@@ -53,6 +61,7 @@ export const styles = StyleSheet.create({
   modal_select_input: {
     flexDirection: 'row',
     paddingHorizontal: 12,
+    color: colors.DARKER_BLUE,
     paddingVertical: 6,
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -66,5 +75,13 @@ export const styles = StyleSheet.create({
     lineHeight: 20,
     color: '#36383A',
     opacity: 0.5,
+  },
+  modal_text: {
+    fontFamily: fonts.BE_VIETNAM_PRO_REGULAR,
+    fontSize: 14,
+    fontWeight: '400',
+    lineHeight: 22,
+    textAlign: 'center',
+    color: '#2C3442',
   },
 });
