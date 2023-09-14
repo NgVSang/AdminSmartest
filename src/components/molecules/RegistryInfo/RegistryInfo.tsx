@@ -9,6 +9,7 @@ const RegistryInfo: FC<RegistryInfoProps> = ({
   type,
   onCancle,
   onConfirm,
+  ...props
 }) => {
   const handleConfirm = useCallback(() => {
     if (onConfirm) onConfirm(data);
@@ -57,7 +58,7 @@ const RegistryInfo: FC<RegistryInfoProps> = ({
     }
   }, [type, handleConfirm, handleCancel, data.status]);
   return (
-    <TouchableOpacity style={styles.regis}>
+    <TouchableOpacity style={styles.regis} {...props}>
       <View style={styles.regis_group}>
         <Text style={styles.regis_text}>{formatDate(data.date)}</Text>
         {renderButton}

@@ -10,11 +10,21 @@ export type RootStackParamList = {
     id: number;
   };
   RegisteredRegistration: undefined;
+  RegisteredRegistrationDetail: {
+    id: number;
+  };
   PaidRegistration: {
     date?: Date;
   };
+  PaidRegistrationDetail: {
+    id: number;
+  };
   CompletedRegistration: {
     date?: Date;
+  };
+  CompletedRegistrationDetail: {
+    id: number;
+    status?: number;
   };
 };
 

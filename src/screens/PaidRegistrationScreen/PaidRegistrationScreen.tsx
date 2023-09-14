@@ -304,6 +304,11 @@ const PaidRegistrationScreen: FC<PaidRegistrationScreenProps> = ({
               data={registry}
               type={1}
               key={registry.id}
+              onPress={() => {
+                navigation.push('PaidRegistrationDetail', {
+                  id: registry.id,
+                });
+              }}
               onConfirm={handleConfirm}
               onCancle={handleCancle}
             />

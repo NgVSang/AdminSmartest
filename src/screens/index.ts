@@ -7,3 +7,6 @@ export * from './MonitorRegistrationDetailScreen';
 export * from './RegisteredRegistrationScreen';
 export * from './PaidRegistrationScreen';
 export * from './CompletedRegistrationScreen';
+export * from './RegisteredRegistrationDetailScreen';
+export * from './PaidRegistrationDetailScreen';
+export * from './CompletedRegistrationDetailScreen';

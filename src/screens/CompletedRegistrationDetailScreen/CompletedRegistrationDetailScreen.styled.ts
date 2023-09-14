@@ -1,0 +1,105 @@
+import {StyleSheet} from 'react-native';
+import {SCREEN_HEIGHT, SCREEN_WIDTH, fonts} from '../../constants';
+
+export const styles = StyleSheet.create({
+  scrollView: {
+    flex: 1,
+  },
+  title: {
+    fontFamily: fonts.BE_VIETNAM_PRO_BOLD,
+    fontSize: 12,
+    lineHeight: 24,
+    color: '#0F6AA9',
+    fontWeight: '700',
+    textTransform: 'uppercase',
+    marginBottom: 10,
+  },
+  container: {
+    paddingHorizontal: 15,
+  },
+  general: {
+    paddingVertical: 20,
+    borderBottomColor: '#F2F6FC',
+    borderBottomWidth: 10,
+  },
+  car: {},
+  car_title: {
+    fontFamily: fonts.BE_VIETNAM_PRO_MEDIUM,
+    fontSize: 10,
+    lineHeight: 18,
+    color: '#394B6A',
+    opacity: 0.7,
+    textTransform: 'uppercase',
+  },
+  car_licensePlate: {
+    fontFamily: fonts.BE_VIETNAM_PRO_SEMIBOLD,
+    fontSize: 16,
+    lineHeight: 24,
+    color: '#394B6A',
+    textTransform: 'uppercase',
+  },
+  btn_pass: {
+    fontFamily: fonts.BE_VIETNAM_PRO_MEDIUM,
+    fontSize: 11,
+    lineHeight: 16,
+    color: '#008334',
+    paddingHorizontal: 40,
+    borderRadius: 100,
+    backgroundColor: '#BCEBCF',
+    paddingVertical: 4,
+  },
+  registry: {
+    paddingVertical: 20,
+  },
+  btn_address: {
+    fontFamily: fonts.BE_VIETNAM_PRO_MEDIUM,
+    fontSize: 11,
+    lineHeight: 16,
+    color: '#00A32E',
+    paddingHorizontal: 13,
+    borderRadius: 100,
+    backgroundColor: '#E2FFD9',
+    paddingVertical: 4,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  space_between: {
+    justifyContent: 'space-between',
+  },
+  box: {
+    marginTop: 20,
+    paddingBottom: 10,
+    borderBottomColor: '#E1E9F6',
+    borderBottomWidth: 1,
+  },
+  box_title: {
+    fontFamily: fonts.BE_VIETNAM_PRO_SEMIBOLD,
+    fontSize: 11,
+    lineHeight: 16,
+    fontWeight: '600',
+    color: '#394B6A',
+    textTransform: 'uppercase',
+    opacity: 0.7,
+    marginBottom: 10,
+  },
+  box_content: {
+    fontFamily: fonts.BE_VIETNAM_PRO_MEDIUM,
+    fontSize: 14,
+    lineHeight: 22,
+    fontWeight: '500',
+    color: '#2C3442',
+  },
+  regis_cancel: {
+    fontFamily: fonts.BE_VIETNAM_PRO_MEDIUM,
+    fontSize: 11,
+    lineHeight: 16,
+    fontWeight: '500',
+    color: '#8B2929',
+    paddingHorizontal: 20,
+    paddingVertical: 4,
+    backgroundColor: '#F1D5D5',
+    borderRadius: 100,
+  },
+});

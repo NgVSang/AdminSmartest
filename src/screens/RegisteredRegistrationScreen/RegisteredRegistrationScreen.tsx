@@ -296,6 +296,11 @@ const RegisteredRegistrationScreen: FC<RegisteredRegistrationScreenProps> = ({
           {filteredDataSource.map(registry => (
             <RegistryInfo
               data={registry}
+              onPress={() => {
+                navigation.push('RegisteredRegistrationDetail', {
+                  id: registry.id,
+                });
+              }}
               type={0}
               key={registry.id}
               onConfirm={handleConfirm}

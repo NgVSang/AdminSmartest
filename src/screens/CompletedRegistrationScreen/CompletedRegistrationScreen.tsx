@@ -122,7 +122,17 @@ const CompletedRegistrationScreen: FC<CompletedRegistrationScreenProps> = ({
             <Text style={styles.dataNull}>Không có dữ liệu</Text>
           )}
           {filteredDataSource.map(registry => (
-            <RegistryInfo data={registry} type={2} key={registry.id} />
+            <RegistryInfo
+              data={registry}
+              type={2}
+              key={registry.id}
+              onPress={() => {
+                navigation.push('CompletedRegistrationDetail', {
+                  id: registry.id,
+                  status: registry.status,
+                });
+              }}
+            />
           ))}
         </ScrollView>
       </View>
