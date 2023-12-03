@@ -18,35 +18,43 @@ const Login: FC<LoginProps> = ({}) => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleLogin = useCallback(async (data: IFormData) => {
-    setIsLoading(true);
-    try {
-      const dataSend = {
-        username: data.account,
-        password: data.password,
-        deviceToken: fcmToken,
-      };
-      const res = await AuthApi.login(dataSend);
-      dispatch(setCredential(res.data));
-      setHeaderConfigAxios(res.data.access_token);
-      NavigationService.reset({
-        index: 0,
-        routes: [
-          {
-            name: 'Bottom',
-          },
-        ],
-      });
-    } catch (error: any) {
-      Toast.show({
-        type: 'error',
-        text1: error.message || 'Tài khoản hoặc mật khẩu không đúng!',
-        text2: 'Vui lòng thử lại.',
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+  const handleLogin = useCallback(
+    async (data: IFormData) => {
+      setIsLoading(true);
+      try {
+        const dataSend = {
+          username: data.account,
+          password: data.password,
+          deviceToken: fcmToken,
+        };
+        const res = await AuthApi.login(dataSend);
+        if (res.status !== 1) {
+          //@ts-ignore
+          throw new Error('Tài khoản hoặc mật khẩu không đúng!');
+        }
+
+        dispatch(setCredential(res.data));
+        setHeaderConfigAxios(res.data.access_token);
+        NavigationService.reset({
+          index: 0,
+          routes: [
+            {
+              name: 'Bottom',
+            },
+          ],
+        });
+      } catch (error: any) {
+        Toast.show({
+          type: 'error',
+          text1: error.message || 'Tài khoản hoặc mật khẩu không đúng!',
+          text2: 'Vui lòng thử lại.',
+        });
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [fcmToken],
+  );
 
   return (
     <ScrollView style={styles.screen} showsVerticalScrollIndicator={false}>

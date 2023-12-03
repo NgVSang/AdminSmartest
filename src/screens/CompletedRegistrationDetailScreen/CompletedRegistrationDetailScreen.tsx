@@ -26,7 +26,6 @@ const CompletedRegistrationDetailScreen: FC<
   const dispatch = useDispatch();
   const [data, setData] = useState<IRegistrationDetail>();
   const [isLoading, setIsLoading] = useState(false);
-  const [loadingSubmit, setLoadingSubmit] = useState(false);
 
   const handleGetData = useCallback(async () => {
     try {
@@ -46,7 +45,6 @@ const CompletedRegistrationDetailScreen: FC<
   useEffect(() => {
     handleGetData();
   }, []);
-  console.log(data?.status);
 
   return (
     <View style={{flex: 1, backgroundColor: '#FFFFFF'}}>
